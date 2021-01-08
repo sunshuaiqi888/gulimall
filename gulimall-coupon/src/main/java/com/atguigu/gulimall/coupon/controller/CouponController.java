@@ -81,4 +81,16 @@ public class CouponController {
         return R.ok();
     }
 
+    /**
+     * 会员获取优惠券列表
+     * @return
+     */
+    @RequestMapping("/membercoupons")
+    public R membercoupons(){
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满100减10元");
+        return R.ok().put("coupons",Arrays.asList(couponEntity));
+    }
+
+
 }
