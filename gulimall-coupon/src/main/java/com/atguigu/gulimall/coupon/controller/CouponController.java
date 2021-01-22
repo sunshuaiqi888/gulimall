@@ -3,7 +3,11 @@ package com.atguigu.gulimall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +28,7 @@ import com.atguigu.common.utils.R;
  * @email 956062927@qq.com
  * @date 2020-11-28 11:43:07
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
@@ -90,6 +95,17 @@ public class CouponController {
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减10元");
         return R.ok().put("coupons",Arrays.asList(couponEntity));
+    }
+
+
+    @Value("${coupon.user.name}")//从application.properties中获取    //不要写user.name，他是环境里的变量
+    private String name;
+    @Value("${coupon.user.age}")
+    private Integer age;
+    @RequestMapping("/test")
+    public R test(){
+
+        return R.ok().put("name",name).put("age",age);
     }
 
 

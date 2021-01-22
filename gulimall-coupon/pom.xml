@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.0</version>
+		<version>2.2.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.atguigu.gulimall</groupId>
@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>8</java.version>
-		<spring-cloud.version>2020.0.0-M5</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -35,10 +35,18 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--公共依赖-->
 		<dependency>
 			<groupId>com.atguigu.gulimall</groupId>
 			<artifactId>gulimall-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.alibaba.cloud</groupId>
+					<artifactId>spring-cloud-starter-alicloud-oss</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>compile</scope>
 		</dependency>
 
 	</dependencies>
