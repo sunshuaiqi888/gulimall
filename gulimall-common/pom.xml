@@ -102,6 +102,13 @@
             <version>2.2.0.RELEASE</version>
         </dependency>
 
+
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-alicloud-oss</artifactId>-->
+            <!--&lt;!&ndash;<version>2.2.0.RELEASE</version>&ndash;&gt;-->
+        <!--</dependency>-->
+
     </dependencies>
 
     <!--引入spring cloud 阿里巴巴版 版本号要对应好,不然nacos出不来,报错-->

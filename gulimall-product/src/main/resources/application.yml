@@ -8,6 +8,12 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  alicloud:
+        access-key: LTAI4GFSkyd5V9gfhPyV4r6G
+        secret-key: DagiWVPlj2dhmy4RoFqNLcdEtFca6B
+        oss:
+          endpoint: http://oss-cn-beijing.aliyuncs.com
+
   application:
     name: gulimall-product
 # MapperScan
@@ -20,6 +26,11 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-
 server:
   port: 9001
+
+logging:
+  level:
+    com.atguigu.gulimall.product: debug
+#    org.springframework.cloud.openfeign: debug
+#    org.springframework.cloud.sleuth: debug
