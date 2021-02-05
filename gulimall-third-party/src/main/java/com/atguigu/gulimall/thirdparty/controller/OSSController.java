@@ -38,7 +38,7 @@ public class OSSController {
      * 获取上传文件的签名
      * @return
      */
-    @RequestMapping("/third/party/oss/policy")
+    @RequestMapping("/oss/policy")
     public R policy() {
 
         // Endpoint以杭州为例，其它Region请按实际情况填写。
